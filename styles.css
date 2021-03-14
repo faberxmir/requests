@@ -1,0 +1,66 @@
+
+/*
+    #workcards er en section. Jeg bruker den som utgangspunkt for å legge til
+    de andre kortene. Den må ha en position, fordi vi ønsker å posisjonere de 
+    andre elementene med position: absolute. Hvis du ikke husker helt hvordan 
+    position: absolute fungerer, stopp her og les det på nytt. resten er nok 
+    litt forvirrende ellers.
+*/
+#workcards{
+    position: relative;
+    display: block;
+    width: 500px;
+    height: 200px;
+    top: 200px;
+    margin: 0 auto;
+    background-color: blue;
+}
+
+/*
+    .workfile brukes for å styre hver enkelt jobboppføring. Du vil sikkert 
+    legge til litt mer her, men dette er funksjonelt og demonstrere minimumet
+    du må ha med for å få den funksjonaliteten du ønsker.
+
+    det er "transition" som gjør at dette blir animert litt fint. Sjekk github
+    for å se kilder som du kan bruke for å lære deg transition. Det er ikke så
+    vanskelig.
+*/
+.workfile {
+    display: block;
+    position: absolute;
+    width: 500px;
+    background-color: rgb(94, 93, 93);
+    height: 200px;
+    box-shadow: rgb(255, 60, 0) 0px -1px 3px 0px;
+
+    transition: transform 200ms ease-in-out 250ms;
+}
+
+/*
+    Dette skjer på "hover" eventen. Legg merke til at det er et transform
+    attributt der med verdien translateY(-150px). Det betyr at elementet
+    flytter seg på Y-aksen og -150px, altså oppover i dette tilfellet.
+    "transition" i .workfile regelen sier hva som skal skje når "transform"
+    eventen forekommer. 
+*/
+.workfile:hover {
+    cursor: pointer;
+    transform: translateY(-150px);
+}
+
+/*
+    basic? ellers spør.
+*/
+.workfile H1 {
+    margin: 0;
+    text-align: center;
+    color: red;
+    padding: 0.2em;
+    font-size: 1.2em;
+    background-color: black;
+    height: 35px;
+}
+
+body{
+    width: 100%;
+}
